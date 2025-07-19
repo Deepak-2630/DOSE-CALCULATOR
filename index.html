@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pediatric Dose Calculator - Professional Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="main-title">Pediatric Dose Calculator</h1>
+            <p class="subtitle">Professional pediatric medication dosing system</p>
+        </header>
+        
+        <div class="input-section">
+            <div class="input-card">
+                <label for="weight-input" class="input-label">
+                    Child's Weight (kg)
+                    <span class="required">*</span>
+                </label>
+                <div class="input-wrapper">
+                    <input 
+                        type="number" 
+                        id="weight-input" 
+                        placeholder="Enter weight in kg" 
+                        min="0" 
+                        step="0.1"
+                        class="weight-input"
+                    >
+                    <span class="input-unit">kg</span>
+                </div>
+                <div class="input-help">
+                    Enter the child's weight to calculate appropriate medication dosages
+                </div>
+            </div>
+        </div>
+
+        <div id="results-container" class="results-container">
+            <div class="results-placeholder">
+                <div class="placeholder-icon">📊</div>
+                <p>Enter a weight above to see medication dosage calculations</p>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <div class="disclaimer">
+                <strong>Medical Disclaimer:</strong> This calculator is for educational purposes only. 
+                Always consult with a healthcare professional before administering medication.
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

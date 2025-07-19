@@ -1,0 +1,352 @@
+/* Big4 Professional Font System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Big4 Color Palette */
+    --primary-navy: #003B5C;
+    --professional-blue: #1F2937;
+    --clean-white: #FFFFFF;
+    --soft-gray: #F8FAFC;
+    --success-green: #059669;
+    --light-green: #ECFDF5;
+    --border-gray: #E5E7EB;
+    --text-gray: #374151;
+    --text-light: #6B7280;
+    --text-muted: #9CA3AF;
+    --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    background-color: var(--soft-gray);
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    display: grid;
+    gap: 32px;
+}
+
+/* Header Styling */
+.header {
+    text-align: center;
+    padding: 24px 0;
+}
+
+.main-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    justify-content: center;
+}
+
+.input-card {
+    background: var(--clean-white);
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: var(--shadow-light);
+    max-width: 400px;
+    width: 100%;
+}
+
+.input-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin-bottom: 8px;
+}
+
+.required {
+    color: #EF4444;
+    margin-left: 2px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.weight-input {
+    width: 100%;
+    padding: 12px 16px;
+    padding-right: 40px;
+    font-size: 16px;
+    border: 1.5px solid var(--border-gray);
+    border-radius: 6px;
+    background: var(--clean-white);
+    transition: all 0.2s ease;
+    font-weight: 400;
+}
+
+.weight-input:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.weight-input::placeholder {
+    color: var(--text-muted);
+}
+
+.input-unit {
+    position: absolute;
+    right: 16px;
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.input-help {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Results Section */
+.results-container {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.results-placeholder {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--text-light);
+    background: var(--clean-white);
+    border: 2px dashed var(--border-gray);
+    border-radius: 8px;
+    grid-column: 1 / -1;
+}
+
+.placeholder-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+}
+
+/* Medication Cards */
+.card {
+    background: var(--clean-white);
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--success-green), #10B981);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-large);
+    border-color: #D1D5DB;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--professional-blue);
+    margin: 0;
+}
+
+.drug-type {
+    font-size: 12px;
+    color: var(--text-muted);
+    background: #F3F4F6;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.card-info {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.info-label {
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.info-value {
+    font-size: 14px;
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+.calculated-dose {
+    background: var(--light-green);
+    border: 1px solid #A7F3D0;
+    border-radius: 6px;
+    padding: 16px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.dose-label {
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.dose-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--success-green);
+    margin: 0;
+}
+
+.dose-unit {
+    font-size: 14px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-gray);
+}
+
+.disclaimer {
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #92400E;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 24px 16px;
+    }
+    
+    .main-title {
+        font-size: 24px;
+    }
+    
+    .results-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .input-card {
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .dose-value {
+        font-size: 18px;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Focus Management */
+.card:focus-within {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --border-gray: #000000;
+        --text-light: #000000;
+        --shadow-light: none;
+        --shadow-medium: none;
+        --shadow-large: none;
+    }
+    
+    .card {
+        border: 2px solid #000000;
+    }
+}
